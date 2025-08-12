@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_98e9acef2836971bcba8a649c325cfef {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_98e9acef2836971bcba8a649c325cfef" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_98e9acef2836971bcba8a649c325cfef = L.map(
+                "map_98e9acef2836971bcba8a649c325cfef",
+                {
+                    center: [10.549606935546127, -75.16652413899303],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_98e9acef2836971bcba8a649c325cfef);
+
+            
+
+        
+    
+            var tile_layer_fd6b12ee2b18a4c51ade57edd3b20048 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fd6b12ee2b18a4c51ade57edd3b20048.addTo(map_98e9acef2836971bcba8a649c325cfef);
+        
+    
+            map_98e9acef2836971bcba8a649c325cfef.fitBounds(
+                [[10.480373918793008, -75.2414387226778], [10.618839952299247, -75.09160955530827]],
+                {}
+            );
+        
+    
+        function geo_json_4812c814cad810c68734651a9e2b9a5e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_4812c814cad810c68734651a9e2b9a5e_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_4812c814cad810c68734651a9e2b9a5e_pointToLayer(feature, latlng) {
+            var opts = {
+  "stroke": true,
+  "color": "#3388ff",
+  "weight": 3,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "radius": 2,
+};
+            
+            let style = geo_json_4812c814cad810c68734651a9e2b9a5e_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_4812c814cad810c68734651a9e2b9a5e_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_4812c814cad810c68734651a9e2b9a5e.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_4812c814cad810c68734651a9e2b9a5e_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_4812c814cad810c68734651a9e2b9a5e = L.geoJson(null, {
+                onEachFeature: geo_json_4812c814cad810c68734651a9e2b9a5e_onEachFeature,
+            
+                style: geo_json_4812c814cad810c68734651a9e2b9a5e_styler,
+                pointToLayer: geo_json_4812c814cad810c68734651a9e2b9a5e_pointToLayer,
+            ...{
+}
+        });
+
+        function geo_json_4812c814cad810c68734651a9e2b9a5e_add (data) {
+            geo_json_4812c814cad810c68734651a9e2b9a5e
+                .addData(data);
+        }
+            geo_json_4812c814cad810c68734651a9e2b9a5e_add({"bbox": [-75.2414387226778, 10.480373918793008, -75.09160955530827, 10.618839952299247], "features": [{"bbox": [-75.21539609535444, 10.544041803210208, -75.21539609535444, 10.544041803210208], "geometry": {"coordinates": [-75.21539609535444, 10.544041803210208], "type": "Point"}, "id": "0", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 5, "id": 1}, "type": "Feature"}, {"bbox": [-75.20965576897913, 10.547289958920947, -75.20965576897913, 10.547289958920947], "geometry": {"coordinates": [-75.20965576897913, 10.547289958920947], "type": "Point"}, "id": "1", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 9, "id": 2}, "type": "Feature"}, {"bbox": [-75.2021345447912, 10.55340201146521, -75.2021345447912, 10.55340201146521], "geometry": {"coordinates": [-75.2021345447912, 10.55340201146521], "type": "Point"}, "id": "2", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 9, "id": 3}, "type": "Feature"}, {"bbox": [-75.18498271363788, 10.57312578770852, -75.18498271363788, 10.57312578770852], "geometry": {"coordinates": [-75.18498271363788, 10.57312578770852], "type": "Point"}, "id": "3", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 7, "id": 4}, "type": "Feature"}, {"bbox": [-75.16017320966033, 10.580069300733761, -75.16017320966033, 10.580069300733761], "geometry": {"coordinates": [-75.16017320966033, 10.580069300733761], "type": "Point"}, "id": "4", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 2, "id": 5}, "type": "Feature"}, {"bbox": [-75.16011833976195, 10.572227675731986, -75.16011833976195, 10.572227675731986], "geometry": {"coordinates": [-75.16011833976195, 10.572227675731986], "type": "Point"}, "id": "5", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 2, "id": 6}, "type": "Feature"}, {"bbox": [-75.16943966751457, 10.565747563262908, -75.16943966751457, 10.565747563262908], "geometry": {"coordinates": [-75.16943966751457, 10.565747563262908], "type": "Point"}, "id": "6", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 8, "id": 7}, "type": "Feature"}, {"bbox": [-75.15053874389267, 10.541637817747409, -75.15053874389267, 10.541637817747409], "geometry": {"coordinates": [-75.15053874389267, 10.541637817747409], "type": "Point"}, "id": "7", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 6, "id": 8}, "type": "Feature"}, {"bbox": [-75.16132272383953, 10.538356227418632, -75.16132272383953, 10.538356227418632], "geometry": {"coordinates": [-75.16132272383953, 10.538356227418632], "type": "Point"}, "id": "8", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 4, "id": 9}, "type": "Feature"}, {"bbox": [-75.15478942425892, 10.531271652968215, -75.15478942425892, 10.531271652968215], "geometry": {"coordinates": [-75.15478942425892, 10.531271652968215], "type": "Point"}, "id": "9", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 4, "id": 10}, "type": "Feature"}, {"bbox": [-75.14542418681599, 10.531335247148295, -75.14542418681599, 10.531335247148295], "geometry": {"coordinates": [-75.14542418681599, 10.531335247148295], "type": "Point"}, "id": "10", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 10, "id": 11}, "type": "Feature"}, {"bbox": [-75.14262882419729, 10.543830246348842, -75.14262882419729, 10.543830246348842], "geometry": {"coordinates": [-75.14262882419729, 10.543830246348842], "type": "Point"}, "id": "11", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 11, "id": 12}, "type": "Feature"}, {"bbox": [-75.13445196852048, 10.559569804842074, -75.13445196852048, 10.559569804842074], "geometry": {"coordinates": [-75.13445196852048, 10.559569804842074], "type": "Point"}, "id": "12", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 8, "id": 13}, "type": "Feature"}, {"bbox": [-75.2003547685226, 10.505650573492321, -75.2003547685226, 10.505650573492321], "geometry": {"coordinates": [-75.2003547685226, 10.505650573492321], "type": "Point"}, "id": "13", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 12, "id": 14}, "type": "Feature"}, {"bbox": [-75.19611851843, 10.517799141920465, -75.19611851843, 10.517799141920465], "geometry": {"coordinates": [-75.19611851843, 10.517799141920465], "type": "Point"}, "id": "14", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 3, "id": 15}, "type": "Feature"}, {"bbox": [-75.18571608502211, 10.523930682994267, -75.18571608502211, 10.523930682994267], "geometry": {"coordinates": [-75.18571608502211, 10.523930682994267], "type": "Point"}, "id": "15", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 11, "id": 16}, "type": "Feature"}, {"bbox": [-75.18563829174404, 10.512881268272963, -75.18563829174404, 10.512881268272963], "geometry": {"coordinates": [-75.18563829174404, 10.512881268272963], "type": "Point"}, "id": "16", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 3, "id": 17}, "type": "Feature"}, {"bbox": [-75.17340737273368, 10.515104035984152, -75.17340737273368, 10.515104035984152], "geometry": {"coordinates": [-75.17340737273368, 10.515104035984152], "type": "Point"}, "id": "17", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 4, "id": 18}, "type": "Feature"}, {"bbox": [-75.23546176116334, 10.529286631669446, -75.23546176116334, 10.529286631669446], "geometry": {"coordinates": [-75.23546176116334, 10.529286631669446], "type": "Point"}, "id": "18", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 6, "id": 19}, "type": "Feature"}, {"bbox": [-75.2414387226778, 10.558828650737643, -75.2414387226778, 10.558828650737643], "geometry": {"coordinates": [-75.2414387226778, 10.558828650737643], "type": "Point"}, "id": "19", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 9, "id": 20}, "type": "Feature"}, {"bbox": [-75.22719209967782, 10.58138513654593, -75.22719209967782, 10.58138513654593], "geometry": {"coordinates": [-75.22719209967782, 10.58138513654593], "type": "Point"}, "id": "20", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 12, "id": 21}, "type": "Feature"}, {"bbox": [-75.09160955530827, 10.563777605569474, -75.09160955530827, 10.563777605569474], "geometry": {"coordinates": [-75.09160955530827, 10.563777605569474], "type": "Point"}, "id": "21", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 12, "id": 22}, "type": "Feature"}, {"bbox": [-75.17559631079422, 10.5703390562157, -75.17559631079422, 10.5703390562157], "geometry": {"coordinates": [-75.17559631079422, 10.5703390562157], "type": "Point"}, "id": "22", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 3, "id": 23}, "type": "Feature"}, {"bbox": [-75.15079162465595, 10.577994708088822, -75.15079162465595, 10.577994708088822], "geometry": {"coordinates": [-75.15079162465595, 10.577994708088822], "type": "Point"}, "id": "23", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 3, "id": 24}, "type": "Feature"}, {"bbox": [-75.23878870968238, 10.49112424200453, -75.23878870968238, 10.49112424200453], "geometry": {"coordinates": [-75.23878870968238, 10.49112424200453], "type": "Point"}, "id": "24", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 10, "id": 25}, "type": "Feature"}, {"bbox": [-75.0993199516143, 10.532000747425094, -75.0993199516143, 10.532000747425094], "geometry": {"coordinates": [-75.0993199516143, 10.532000747425094], "type": "Point"}, "id": "25", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 6, "id": 26}, "type": "Feature"}, {"bbox": [-75.12709320890531, 10.58956224588902, -75.12709320890531, 10.58956224588902], "geometry": {"coordinates": [-75.12709320890531, 10.58956224588902], "type": "Point"}, "id": "26", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 2, "id": 27}, "type": "Feature"}, {"bbox": [-75.20214817939447, 10.605799357072096, -75.20214817939447, 10.605799357072096], "geometry": {"coordinates": [-75.20214817939447, 10.605799357072096], "type": "Point"}, "id": "27", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 6, "id": 28}, "type": "Feature"}, {"bbox": [-75.22313932076153, 10.618839952299247, -75.22313932076153, 10.618839952299247], "geometry": {"coordinates": [-75.22313932076153, 10.618839952299247], "type": "Point"}, "id": "28", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 5, "id": 29}, "type": "Feature"}, {"bbox": [-75.19585428004132, 10.480373918793008, -75.19585428004132, 10.480373918793008], "geometry": {"coordinates": [-75.19585428004132, 10.480373918793008], "type": "Point"}, "id": "29", "properties": {"Des_com": "Dorso caf\u00e9 con largos flecos que sobresalen por los lados. Vientre, piernas y pies de color crema hasta blanco amarillento. La cabeza posee una cresta de largo pelo blanco. Cara, barbilla y lados de la coronilla hasta detr\u00e1s de las orejas de color negr", "Des_gen": "Titi cabeciblanco: El tit\u00ed cabeciblanco es una especie de primate platirrino de la familia Callitrichidae, de h\u00e1bitos diurnos y territoriales, end\u00e9micos de los bosques del noreste de Colombia \n", "Habitat": "Endemicos de bosques h\u00famedos y secos del noreste, hasta 800 metros de altitud.", "Niv_riesgo": "En peligro cr\u00edtico\n", "Nom_Comun": "Tit\u00ed Cabeciblanco", "Nom_Esp": "Saguinus oedipus", "Num_Ind": 8, "id": 30}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_4812c814cad810c68734651a9e2b9a5e.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["id", "Nom_Esp", "Nom_Comun", "Habitat", "Des_gen", "Des_com", "Niv_riesgo", "Num_Ind"];
+    let aliases = ["id", "Nom_Esp", "Nom_Comun", "Habitat", "Des_gen", "Des_com", "Niv_riesgo", "Num_Ind"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_4812c814cad810c68734651a9e2b9a5e.addTo(map_98e9acef2836971bcba8a649c325cfef);
+        
+</script>
+</html>
